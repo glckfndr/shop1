@@ -1,0 +1,7 @@
+<h1>Edit</h1>
+
+<%= form_with model: @product do |f|%>
+  <%= f.label :name, "Edit name:" %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update" %>
+<% end %>
