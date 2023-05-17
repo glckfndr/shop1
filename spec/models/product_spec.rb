@@ -11,12 +11,12 @@ RSpec.describe Product, type: :model do
     expect(product).to_not be_valid
   end
 
-  it "is valid with a name and price" do
+  it "should be valid with a name and price" do
     product = Product.new(name: "Test product", price: 10)
     expect(product).to be_valid
   end
   
-  it 'is invalid with a negative price' do
+  it 'should be invalid with a negative price' do
     product = Product.new(
       name: 'Example Product',
       description: 'This is an example product',
