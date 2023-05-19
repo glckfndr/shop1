@@ -13,7 +13,7 @@ RSpec.describe "Products", type: :request do
       product2 = Product.create(name: 'Product 2')
 
       get '/products'
-      expect(assigns(:products)).to eq([product1, product2])
+   !!!   expect(assigns(:products)).to eq([product1, product2])
     end
   end
 

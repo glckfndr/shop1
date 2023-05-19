@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_17_113939) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_19_070342) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstname", null: false
+    t.string "lastname", null: false
+    t.string "address", null: false
+    t.string "phone", null: false
   end
 
   create_table "product_orders", force: :cascade do |t|
@@ -29,9 +33,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_113939) do
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
-    t.decimal "price", null: false
+    t.decimal "price", precision: 8, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "balance"
   end
 
   add_foreign_key "product_orders", "orders"
