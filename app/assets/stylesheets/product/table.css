@@ -1,0 +1,22 @@
+.minimal-table {
+  border-collapse: collapse;
+}
+
+.minimal-table th,
+.minimal-table td {
+  border: 1px solid rgb(102, 31, 31);
+  padding: 8px;
+}
+
+.minimal-table th {
+  background-color: lightgray;
+}
+
+.minimal-table a {
+  text-decoration: none;
+  color: rgb(102, 45, 45);
+}
+
+.minimal-table a:hover {
+  text-decoration: underline;
+}

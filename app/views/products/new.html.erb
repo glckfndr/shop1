@@ -1,10 +1,4 @@
 <h1> New Products</h1>
-<%= form_with model: @product do |f| %>
-  <%= f.label :name, "Enter Name:" %>
-  <%= f.text_field :name %>
-  <%= f.label :decription, "Enter Description:" %>
-  <%= f.text_area :description %>
-  <%= f.label :price, "Enter Price:" %>
-  <%= f.number_field :price %>
-  <%= f.submit "Create" %>
-<% end %>
+
+
+<%= render "form", product: @product %>

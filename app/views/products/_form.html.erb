@@ -1,0 +1,9 @@
+<%= simple_form_for product do |f| %>
+<%= f.hint 'No special characters, please!' %>
+  <%= f.input :name, label: "Name:" %>
+  <%= f.input :description, label: "Description", as: :text  %>
+  <%= f.input :price, placeholder: '12.4' %>
+  <%= f.input :balance, placeholder: '1' %>
+  
+  <%= f.button  :submit %>
+<% end %>

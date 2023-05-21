@@ -1,7 +1,3 @@
-<h1>Edit</h1>
+<h1>Edit Product</h1>
+<%= render "form", product: @product %>
 
-<%= form_with model: @product do |f|%>
-  <%= f.label :name, "Edit name:" %>
-  <%= f.text_field :name %>
-  <%= f.submit "Update" %>
-<% end %>

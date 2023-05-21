@@ -1,10 +1,8 @@
-<h1> Show </h1>
-
-
-<b>Name:</b> <%= @product.name %>
+<h1> Show <%= @product.name.capitalize %> </h1>
 <hr/>
-<b> Description:</b> <%= @product.description %>
-<hr/>
-<b> Price:</b> <%= @product.price %>
+<% @product.attributes.each do |attr_name, attr_value| %>
+  <p><strong><%= attr_name.capitalize %>:</strong> <%= attr_value %></p>
+<% end %>
+
 <hr/>
 <%= link_to "Back", products_path  %>
