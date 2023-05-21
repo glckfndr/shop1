@@ -1,0 +1,25 @@
+<h1> Order Table</h1>
+<%= link_to 'Create New Order', new_order_path %>
+
+<table id='order_table' class="minimal-table">
+  
+  <thead>
+    <%= create_table_header %w[# Ім'я Прізвище Адреса Телефон Дія] %>
+  </thead>
+  <tbody>
+    <% @orders.each do |order|   %>
+      <tr>
+        <%= create_data_row(order, [:id, :firstname, :lastname, :address, :phone]) %>
+        <td>
+          <%= link_to 'Show', order_path(order) %>
+          <%= link_to 'Edit', edit_order_path(order) %>
+          <%= link_to 'Destroy', order_path(order), data: {  turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Products", products_path  %>
+<br/>
+<%= link_to "Main", root_path  %>
