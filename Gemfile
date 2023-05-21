@@ -29,6 +29,7 @@ gem "stimulus-rails"
 
 gem 'factory_bot_rails'
 gem 'simple_form'
+gem 'pg'
 
 
 # Use Redis adapter to run Action Cable in production
