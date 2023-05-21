@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  let
+  
   it "is not valid without a name" do
     product = Product.new(price: 10)
     expect(product).to_not be_valid
@@ -22,8 +22,8 @@ RSpec.describe Product, type: :model do
       name: 'Example Product',
       description: 'This is an example product',
       price: -9.99)
-    expect(product).to_not be_valid
-    #expect(product.errors[:price]).to include("must be greater than or equal to 0")
+    #expect(product).to_not be_valid
+    expect(product.errors[:price]).to include("must be greater than or equal to 0")
   end
 
 

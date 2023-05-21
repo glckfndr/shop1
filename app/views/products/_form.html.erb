@@ -1,9 +1,31 @@
-<%= simple_form_for product do |f| %>
-<%= f.hint 'No special characters, please!' %>
-  <%= f.input :name, label: "Name:" %>
-  <%= f.input :description, label: "Description", as: :text  %>
-  <%= f.input :price, placeholder: '12.4' %>
-  <%= f.input :balance, placeholder: '1' %>
-  
-  <%= f.button  :submit %>
-<% end %>
+<table class="minimal-table">
+  <thead>
+      <%= create_table_header %w[Атрибут Значення] %>
+  </thead>
+<tbody>
+  <%= form_with model: product do |f| %>
+    <tr>
+      <td> <%= f.label :name %></td>
+      <td> <%= f.text_field  :name %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :description %></td>
+      <td> <%= f.text_area  :description %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :price %></td>
+      <td> <%= f.number_field  :price , step: 0.1 %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :balance %></td>
+      <td> <%= f.number_field  :balance %> </td>
+    </tr>
+    <tr>
+      <td>  </td>
+      <td> <%= f.button  :submit %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

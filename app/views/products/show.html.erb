@@ -1,8 +1,19 @@
 <h1> Show <%= @product.name.capitalize %> </h1>
-<hr/>
-<% @product.attributes.each do |attr_name, attr_value| %>
-  <p><strong><%= attr_name.capitalize %>:</strong> <%= attr_value %></p>
-<% end %>
 
-<hr/>
+<div>
+<table id='product_tbl' class="minimal-table">
+  <thead>
+      <%= create_table_header %w[Атрибут Значення] %>
+  </thead>
+<tbody>
+  <% @product.attributes.each do |attr_name, attr_value| %>
+    <tr>
+        <td> <strong><%= attr_name.capitalize %>:</strong> </td>
+        <td> <%= attr_value %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
 <%= link_to "Back", products_path  %>

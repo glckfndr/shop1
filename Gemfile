@@ -30,7 +30,8 @@ gem "stimulus-rails"
 gem 'factory_bot_rails'
 gem 'simple_form'
 gem 'pg'
-
+gem 'foreman'
+gem "tailwindcss-rails", "~> 2.0"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -77,4 +78,4 @@ group :test do
   gem "webdrivers"
 end
 
-gem "tailwindcss-rails", "~> 2.0"
+
