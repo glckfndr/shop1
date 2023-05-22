@@ -22,7 +22,7 @@ RSpec.describe Product, type: :model do
       name: 'Example Product',
       description: 'This is an example product',
       price: -9.99)
-    #expect(product).to_not be_valid
+    expect(product).to_not be_valid
     expect(product.errors[:price]).to include("must be greater than or equal to 0")
   end
 

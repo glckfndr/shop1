@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  validates :firstname,  presence: true
-  validates :lastname,  presence: true
-  validates :address,  presence: true
-  validates :phone,  presence: true
+  has_many :product_orders
+  has_many :products, through: :product_orders
+
+  validates :firstname, :lastname, :address, :phone, presence: true  
 end

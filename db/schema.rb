@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_19_070342) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_071823) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_19_070342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "balance"
+    t.check_constraint "price >= 0", name: "price_non_negative"
   end
 
   add_foreign_key "product_orders", "orders"
