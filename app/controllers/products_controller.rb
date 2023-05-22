@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
 before_action :find, only: [:show, :edit, :update, :destroy]
+
   def index
     @products = Product.all
   end
   
-  def show
-     
+  def show     
   end
 
   def new
@@ -16,7 +16,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
   end
   
   def create
-    @product = Product.new permit
+    @product = Product.new get_permition
     if @product.save
       redirect_to product_path(@product)
     else
@@ -25,7 +25,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    if @product.update permit
+    if @product.update get_permition
       redirect_to product_path(@product)
     else
       render :edit
@@ -38,7 +38,7 @@ before_action :find, only: [:show, :edit, :update, :destroy]
   end
   
   private
-  def permit
+  def get_permition
     params.require(:product).permit(:name, :description, :price, :balance)
   end
 
