@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @order = Order.new permit
+    @order = Order.new get_permition
     if @order.save
       redirect_to order_path(@order)
     else
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update permit
+    if @order.update get_permition
       redirect_to order_path(@order)
     else
       render :edit
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
   end
   
   private
-  def permit
+  def get_permition
     params.require(:order).permit(:firstname, :lastname, :address, :phone)
   end
 
