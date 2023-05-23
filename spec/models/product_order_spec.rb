@@ -15,6 +15,11 @@ RSpec.describe ProductOrder, type: :model do
     order = ProductOrder.new(order_id: 1, product_id: 2)
     expect(order).to_not be_valid
   end
-  
+
+  it 'is invalid with a negative quantity' do
+    product = ProductOrder.new(order_id: 1, product_id: 2, quantity: -1)
+    expect(product).to_not be_valid
+    expect(product.errors[:quantity]).to include("must be greater than or equal to 0")
+  end
   
 end

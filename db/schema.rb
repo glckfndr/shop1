@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_071823) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_072139) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,11 +23,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_071823) do
   create_table "product_orders", force: :cascade do |t|
     t.integer "product_id", null: false
     t.integer "order_id", null: false
-    t.integer "quantity"
+    t.integer "quantity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_product_orders_on_order_id"
     t.index ["product_id"], name: "index_product_orders_on_product_id"
+    t.check_constraint "quantity >= 0", name: "quantity_non_negative"
   end
 
   create_table "products", force: :cascade do |t|
