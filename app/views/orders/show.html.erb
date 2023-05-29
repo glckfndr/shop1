@@ -2,9 +2,7 @@
 
 <div>
 <table id='product_tbl' class="minimal-table">
-  <thead>
-      <%= create_table_header %w[Атрибут Значення] %>
-  </thead>
+  <%= thead_tag %w[Атрибут Значення] %>  
 <tbody>
   <% @order.attributes.each do |attr_name, attr_value| %>
     <tr>

@@ -1,8 +1,6 @@
 <table class="minimal-table">
-  <thead>
-      <%= create_table_header %w[Атрибут Значення] %>
-  </thead>
-<tbody>
+  <%= thead_tag %w[Атрибут Значення] %>
+  <tbody>
   <%= form_with model: product do |f| %>
     <tr>
       <td> <%= f.label :name %></td>

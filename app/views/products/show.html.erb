@@ -2,11 +2,9 @@
 
 <div>
 <table id='product_tbl' class="minimal-table">
-  <thead>
-      <%= create_table_header %w[Атрибут Значення] %>
-  </thead>
-<tbody>
-  <% @product.attributes.each do |attr_name, attr_value| %>
+  <%= thead_tag %w[Атрибут Значення] %>
+  <tbody>
+    <% @product.attributes.each do |attr_name, attr_value| %>
     <tr>
         <td> <strong><%= attr_name.capitalize %>:</strong> </td>
         <td> <%= attr_value %> </td>

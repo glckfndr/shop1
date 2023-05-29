@@ -2,14 +2,11 @@
 <%= link_to 'Create New Product', new_product_path %>
 
 <table id='product_table' class="minimal-table">
-  
-  <thead>
-    <%= create_table_header %w[# Товар Опис Ціна Кількість Дія] %>
-  </thead>
+  <%= thead_tag %w[# Товар Опис Ціна Кількість Дія] %>
   <tbody>
     <% @products.each do |product|   %>
       <tr>
-        <%= create_data_row(product, [:id, :name, :description, :price, :balance]) %>
+        <%= row_tag(product, :id, :name, :description, :price, :balance) %>
         <td>
           <%= link_to 'Show', product_path(product) %>
           <%= link_to 'Edit', edit_product_path(product) %>

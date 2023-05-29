@@ -1,15 +1,11 @@
 <h1> Order Table</h1>
 <%= link_to 'Create New Order', new_order_path %>
-
 <table id='order_table' class="minimal-table">
-  
-  <thead>
-    <%= create_table_header %w[# Ім'я Прізвище Адреса Телефон Дія] %>
-  </thead>
+  <%= thead_tag %w[# Ім'я Прізвище Адреса Телефон Дія] %>
   <tbody>
     <% @orders.each do |order|   %>
       <tr>
-        <%= create_data_row(order, [:id, :firstname, :lastname, :address, :phone]) %>
+        <%= row_tag(order, :id, :firstname, :lastname, :address, :phone) %>
         <td>
           <%= link_to 'Show', order_path(order) %>
           <%= link_to 'Edit', edit_order_path(order) %>
