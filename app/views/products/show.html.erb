@@ -1,17 +1,42 @@
 <h1> Show <%= @product.name.capitalize %> </h1>
 
 <div>
-<table id='product_tbl' class="minimal-table">
+<table id='product_tbl' class="border-collapse border border-slate-500 border-spacing-1 hover:border-spacing-2">
   <%= thead_tag %w[Атрибут Значення] %>
   <tbody>
     <% @product.attributes.each do |attr_name, attr_value| %>
     <tr>
-        <td> <strong><%= attr_name.capitalize %>:</strong> </td>
-        <td> <%= attr_value %> </td>
+        <td class="border border-slate-700"> <strong><%= attr_name.capitalize %>:</strong> </td>
+        <td class="border border-slate-600"> <%= attr_value %> </td>
     </tr>
   <% end %>
   </tbody>
 </table>
+</div>
+
+<!-- app/views/products/show.html.erb -->
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-4"><%= @product.name %></h1>
+  <p class="text-gray-600 mb-2"><%= @product.description %></p>
+  <p class="text-lg font-semibold text-green-600">Price: $<%= @product.price %></p>
+  <!-- Add more HTML elements as needed -->
+</div>
+
+<div class="container mx-auto py-8">
+  <h1 class="text-3xl font-semibold mb-4"><%= @product.name %></h1>
+  <table class="table-auto w-full">
+    <tbody>
+      <tr>
+        <td class="px-4 py-2 font-semibold">Description:</td>
+        <td class="px-4 py-2"><%= @product.description %></td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-semibold">Price:</td>
+        <td class="px-4 py-2"><%= number_to_currency(@product.price) %></td>
+      </tr>
+      <!-- Add more rows for additional product details -->
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "Back", products_path  %>

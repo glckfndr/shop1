@@ -1,17 +1,22 @@
-<h1> Show <%= @order.firstname.capitalize %> </h1>
+
 
 <div>
-<table id='product_tbl' class="minimal-table">
-  <%= thead_tag %w[Атрибут Значення] %>  
+<table id='product_tbl' class="border border-collapse table-fixed border-slate-500 bg-slate-300 caption-top">
+  <caption class="text-white bg-slate-500">
+      Show <%= @order.firstname.capitalize %>
+    </caption>
+  <%= thead_tag %w[Атрибут Значення] %>
 <tbody>
   <% @order.attributes.each do |attr_name, attr_value| %>
     <tr>
-        <td> <strong><%= attr_name.capitalize %>:</strong> </td>
-        <td> <%= attr_value %> </td>
+        <td class="border border-slate-700"> <strong><%= attr_name.capitalize %>:</strong> </td>
+        <td class="border border-slate-700"> <%= attr_value %> </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 </div>
 
-<%= link_to "Back", orders_path  %>
+
+
+<%= link_to "Back", orders_path, class: "text-blue-600 visited:text-purple-600"  %>

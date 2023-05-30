@@ -1,13 +1,18 @@
-<h1> Product Table</h1>
-<%= link_to 'Create New Product', new_product_path %>
 
-<table id='product_table' class="minimal-table">
+<table id='product_table' class="border border-collapse table-fixed border-slate-500 bg-slate-300 caption-top">
+<caption class="text-white bg-slate-800">
+ <h2>Product Table</h2>
+<div><%= link_to 'Create New Product', new_product_path %></div>
+
+
+  </caption>
+
   <%= thead_tag %w[# Товар Опис Ціна Кількість Дія] %>
   <tbody>
     <% @products.each do |product|   %>
       <tr>
         <%= row_tag(product, :id, :name, :description, :price, :balance) %>
-        <td>
+        <td class="border border-slate-700">
           <%= link_to 'Show', product_path(product) %>
           <%= link_to 'Edit', edit_product_path(product) %>
           <%= link_to 'Destroy', product_path(product), data: {  turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

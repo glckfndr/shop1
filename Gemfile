@@ -27,7 +27,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 #gem "jbuilder"
 
-gem 'factory_bot_rails'
+
 gem 'simple_form'
 gem 'pg'
 gem 'foreman'
@@ -76,6 +76,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'factory_bot_rails'
 end
 
 
